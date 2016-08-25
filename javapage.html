@@ -1,0 +1,43 @@
+<html>
+<head>
+	<script language="JavaScript">
+
+		var msg = "sdfsdfsadfsadfasdfasdf";
+		var dd = req.body.token
+		function setMessage(dd) {
+			var mainFrame = document.getElementById('textMessageFromApp');
+			var createFrame = document.createElement("div");
+			createFrame.innerHTML = arg;
+			mainFrame.appendChild(createFrame);
+			val2=arg;
+			console.log(req.body.token);
+			
+		} 
+		function sendMessage(msg){
+			window.android.setMessage(msg);
+		}
+
+
+
+	</script>
+	<style>
+		input {
+			position:absolute; top:100%; margin-top:-80px;
+		}
+	</style>
+</head>
+<body>
+	<hr/>
+		<h2>WebView</h2>
+	<hr/>
+	<br/>
+		sended text :
+		<p id="textMessageFromApp" style="height:200px; overflow-y:auto;"> 
+	</p>
+	<hr/>
+	
+	<input type="text" id="textMessageToApp"  value="message to send"/>
+	<input type="button" value="Send kkkkkage" onclick="sendMessage(document.getElementById('textMessageToApp').value)" style="left:50%;"/>
+	<input type="button" value="Send to app" onclick="setMessage(req)" style="right:10%;"/>
+</body>
+</html>
